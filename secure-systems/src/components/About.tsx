@@ -1,0 +1,50 @@
+const About = () => {
+  return (
+    <section id="about" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#092147] mb-4">About Secure Systems</h2>
+            <div className="w-24 h-1 bg-[#1A488E] mb-6"></div>
+            <p className="text-gray-600 mb-6">
+              Since 2005, Secure Systems has been at the forefront of cybersecurity innovation, providing cutting-edge solutions to businesses of all sizes across various industries.
+            </p>
+            <p className="text-gray-600 mb-6">
+              Our mission is to create a safer digital environment for our clients by implementing robust security measures that protect their valuable assets and data from increasingly sophisticated cyber threats.
+            </p>
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
+                <div className="text-3xl font-bold text-[#1A488E]">500+</div>
+                <div className="text-gray-500">Clients Protected</div>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
+                <div className="text-3xl font-bold text-[#1A488E]">98%</div>
+                <div className="text-gray-500">Success Rate</div>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
+                <div className="text-3xl font-bold text-[#1A488E]">20+</div>
+                <div className="text-gray-500">Years Experience</div>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
+                <div className="text-3xl font-bold text-[#1A488E]">24/7</div>
+                <div className="text-gray-500">Support Available</div>
+              </div>
+            </div>
+          </div>
+          <div className="order-1 md:order-2 relative">
+            <div className="relative z-10">
+              <img 
+                src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Secure Systems team" 
+                className="rounded-lg shadow-xl object-cover h-[400px] w-full"
+              />
+            </div>
+            <div className="absolute top-10 -right-5 -bottom-10 -left-5 bg-[#1A488E]/10 rounded-lg -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
