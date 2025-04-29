@@ -45,7 +45,7 @@ const Navbar = () => {
                 <div className="relative">
                   <div className="absolute inset-0 border-white/50 z-0"></div>
                   <img
-                    src="../dist/assets/logo.png" 
+                    src="../src/images/logo.png" 
                     alt="Secure Systems Logo"
                     className='h-26 w-26 object-contain md:h24 md:w-24'
                     onError={(e) =>{
