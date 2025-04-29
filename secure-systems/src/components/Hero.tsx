@@ -54,7 +54,7 @@ const Hero = () => {
           playsInline
           className="absolute w-full h-full object-cover"
         >
-          <source src="../src/images/herovideo.webm" type="video/webm" />
+          <source src="../herovideo.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-40 "></div>

@@ -79,7 +79,7 @@ const Team = () => {
     {
       name: "Isaiah Makau",
       role: "Chief Executive Officer",
-      image: "../src/images/isaiah.jpg",
+      image: "../isaiah.jpg",
       bio: "With leadership and technology skills Isaiah leads our company's strategic vision and operations.",
       social: {
         linkedin: "#",
@@ -90,7 +90,7 @@ const Team = () => {
     {
       name: "Bob Simba",
       role: "Chief Technology Officer",
-      image: "../src/images/bob.png",
+      image: "../bob.png",
       bio: "Bob's expertise in all things technology helps us stay ahead of the curve.",
       social: {
         linkedin: "#",
@@ -101,7 +101,7 @@ const Team = () => {
     {
       name: "Joseph Muema",
       role: "Chief Operations Officer",
-      image: "../src/images/jose.png ",
+      image: "../jose.png ",
       bio: "Joseph is our operations leader, ensuring smooth day-to-day processes and client satisfaction.",
       social: {
         linkedin: "#",
@@ -111,7 +111,7 @@ const Team = () => {
     {
       name: "Justus Kimutai",
       role: "Chief Cloud Engineer",
-      image: "../src/images/Kimutai_Potrait.png",
+      image: "../Kimutai_Potrait.png",
       bio: "Justus specializes in cloud security and infrastructure management.",
       social: {
         linkedin: "#",
