@@ -18,7 +18,7 @@ const Footer = () => {
               <span className="ml-2 text-white font-bold text-xl">Secure Systems</span>
             </div>
             <p className="text-gray-300 mb-6">
-              Protecting your business with cutting-edge cybersecurity solutions since 2005.
+              Enhancing security and efficiency through AI, blockchain and cloud innovation..
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-[#97B2DE] transition-colors duration-300">
@@ -39,12 +39,12 @@ const Footer = () => {
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-[#97B2DE]">Services</h3>
             <ul className="space-y-2">
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Threat Protection</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Website Management</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Identity Management</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Network Security</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Software Development</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Data Encryption</a></li>
               <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Cloud Security</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Security-Audits</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">Cybersecurity-Audits</a></li>
             </ul>
           </div>
           

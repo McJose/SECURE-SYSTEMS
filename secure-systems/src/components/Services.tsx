@@ -45,8 +45,8 @@ const Services = () => {
     },
     {
       icon: Server,
-      title: "Network Security",
-      description: "Secure your infrastructure with enterprise-grade firewall protection and intrusion detection systems."
+      title: "Software Development",
+      description: "enterprise level services for designing secure, custom software solutions."
     },
     {
       icon: Database,
@@ -60,7 +60,7 @@ const Services = () => {
     },
     {
       icon: FileCode,
-      title: "Security Audits",
+      title:"Cybersecurity Audits",
       description: "Thorough assessment of your systems to identify vulnerabilities and provide remediation strategies."
     }
   ];

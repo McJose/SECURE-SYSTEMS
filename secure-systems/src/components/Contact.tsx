@@ -84,7 +84,7 @@ const Contact = () => {
         
         <div className="grid md:grid-cols-2 gap-12">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-[#092147] mb-6">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-[#092147] mb-6">Reach out today</h3>
             
             {formStatus.message && (
               <div 
@@ -179,8 +179,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#97B2DE]">Phone</h4>
-                    <p>+1 (555) 123-4567</p>
-                    <p>+1 (555) 987-6543</p>
+                    <p>+254 742 234-790</p>
+                    <p>+254 769 312-733</p>
                   </div>
                 </div>
                 
@@ -190,8 +190,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#97B2DE]">Email</h4>
-                    <p>info@securesystems.example</p>
-                    <p>support@securesystems.example</p>
+                    <p>info@securesystems.com</p>
+                    <p>support@securesystems.com</p>
                   </div>
                 </div>
                 
@@ -201,8 +201,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-[#97B2DE]">Location</h4>
-                    <p>123 Security Avenue</p>
-                    <p>Cyber District, Tech City 12345</p>
+                    <p>40200 Kisii</p>
+                    <p>Nyaribari chache, Kisii Town, Texas building</p>
                   </div>
                 </div>
               </div>
@@ -214,18 +214,18 @@ const Contact = () => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="font-medium">Monday - Friday:</span>
-                  <span>9:00 AM - 6:00 PM</span>
+                  <span>8:00 AM - 5:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Saturday:</span>
-                  <span>10:00 AM - 2:00 PM</span>
+                  <span>10:00 AM - 3:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Sunday:</span>
                   <span>Closed</span>
                 </div>
                 <div className="pt-4 border-t border-gray-200 mt-4">
-                  <p className="text-[#1A488E] font-medium">24/7 Emergency Support Available</p>
+                  <p className="text-[#1A488E] font-medium">24/7 Client Support Available</p>
                 </div>
               </div>
             </div>

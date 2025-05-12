@@ -58,35 +58,35 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
-      name: "#",
-      position: "#",
-      company: "#",
+      name: "Purity Rotich",
+      position: "School director",
+      company: "Elimu bora",
       image: "#",
-      quote: "#",
+      quote: " Secure systems delivered a smart, intuitive e-learning platform that elevated our training delivery. their tech expertise stands cout",
       rating: 5
     },
     {
-      name: "#",
-      position: "#",
-      company: "#",
-      image: "#",
-      quote: "#",
+      name: " ",
+      position: " ",
+      company: " ",
+      image: " ",
+      quote: " ",
       rating: 5
     },
     {
-      name: "#",
-      position: "#",
-      company: "#",
-      image: "#",
-      quote: "#",
+      name: " ",
+      position: " ",
+      company: " ",
+      image: " ",
+      quote: " ",
       rating: 5
     },
     {
-      name: "#",
-      position: "#",
-      company: "#",
-      image: "#",
-      quote: "#",
+      name: " ",
+      position: " ",
+      company: " ",
+      image: " ",
+      quote: " ",
       rating: 5
     }
   ];

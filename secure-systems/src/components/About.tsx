@@ -7,14 +7,14 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#092147] mb-4">About Secure Systems</h2>
             <div className="w-24 h-1 bg-[#1A488E] mb-6"></div>
             <p className="text-gray-600 mb-6">
-              Since 2005, Secure Systems has been at the forefront of cybersecurity innovation, providing cutting-edge solutions to businesses of all sizes across various industries.
+              We are a forward-thinking software development startup dedicated to enhancing security, transparency and operational efficiency through cutting-edge technologies. Founded by Isaiah Makau, the company leverages Blockchain, Artificial Intelligence and cloud computing to build innovative solutions.
             </p>
             <p className="text-gray-600 mb-6">
-              Our mission is to create a safer digital environment for our clients by implementing robust security measures that protect their valuable assets and data from increasingly sophisticated cyber threats.
+              Our mission is to create reliable,scalable and intelligent systems that empower institutions and protect sensitive information.
             </p>
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
-                <div className="text-3xl font-bold text-[#1A488E]">500+</div>
+                <div className="text-3xl font-bold text-[#1A488E]">20+</div>
                 <div className="text-gray-500">Clients Protected</div>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
@@ -22,7 +22,7 @@ const About = () => {
                 <div className="text-gray-500">Success Rate</div>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
-                <div className="text-3xl font-bold text-[#1A488E]">20+</div>
+                <div className="text-3xl font-bold text-[#1A488E]">10+</div>
                 <div className="text-gray-500">Years Experience</div>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#1A488E]">
@@ -34,7 +34,7 @@ const About = () => {
           <div className="order-1 md:order-2 relative">
             <div className="relative z-10">
               <img 
-                src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src="../src/team photo.jpeg" 
                 alt="Secure Systems team" 
                 className="rounded-lg shadow-xl object-cover h-[400px] w-full"
               />
