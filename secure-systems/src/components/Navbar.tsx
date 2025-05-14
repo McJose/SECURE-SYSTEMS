@@ -9,6 +9,7 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
+        if (isOpen) setIsOpen(false);
       } else {
         setScrolled(false);
       }
@@ -16,7 +17,13 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -47,13 +54,14 @@ const Navbar = () => {
                   <img
                     src="../logo.png" 
                     alt="Secure Systems Logo"
-                    className='h-26 w-26 object-contain md:h24 md:w-24'
+                    className="h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain"
                     onError={(e) =>{
                       const img = e.target as HTMLImageElement;
-                  img.src = '../logo.png';
-                 }} />  
+                      img.src = '../logo.png';
+                    }} 
+                  />  
                 </div>
-                <span className="ml-3 text-white font-bold text-xl">Secure Systems</span>
+                <span className="ml-2 sm:ml-3 text-white font-bold text-lg sm:text-xl lg:text-2xl">Secure Systems</span>
               </a>
             </div>
           </div>
@@ -89,25 +97,27 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#092147] shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-[#092147] shadow-lg absolute top-20 left-4 right-4 rounded-lg overflow-hidden">
+          <div className="py-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-200 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-200 hover:text-white block px-4 py-2 text-sm font-medium hover:bg-[#1A488E]/20 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="bg-[#1A488E] hover:bg-[#97B2DE] hover:text-[#092147] text-white block px-3 py-2 rounded-md text-base font-medium my-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Get in Touch
-            </a>
+            <div className="px-4 pt-2 pb-2 mt-2 border-t border-[#1A488E]/20">
+              <a
+                href="#contact"
+                className="bg-[#1A488E] hover:bg-[#97B2DE] hover:text-[#092147] text-white block px-4 py-2 rounded-md text-sm font-medium text-center transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
         </div>
       )}

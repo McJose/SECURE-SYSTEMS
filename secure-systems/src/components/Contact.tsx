@@ -72,36 +72,23 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#092147] mb-4">Get in Touch</h2>
-          <div className="w-24 h-1 bg-[#1A488E] mx-auto mb-6"></div>
-          <p className="max-w-3xl mx-auto text-lg text-gray-600">
-            Have questions about our services or need a consultation? Reach out to us and we'll get back to you promptly.
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5FEFD]">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#092147] mb-3 sm:mb-4">Get in Touch</h2>
+          <div className="w-20 sm:w-24 h-1 bg-[#1A488E] mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+            Have questions or need assistance? We're here to help. Reach out to us through any of the following channels.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-[#092147] mb-6">Reach out today</h3>
-            
-            {formStatus.message && (
-              <div 
-                className={`mb-6 p-4 rounded-md ${
-                  formStatus.type === 'success' 
-                    ? 'bg-green-100 border border-green-300 text-green-700' 
-                    : 'bg-red-100 border border-red-300 text-red-700'
-                }`}
-              >
-                {formStatus.message}
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-                  Name <span className="text-red-500">*</span>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Contact Form */}
+          <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-lg border border-white/20 shadow-lg">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm sm:text-base font-medium text-gray-700 mb-1">
+                  Name *
                 </label>
                 <input
                   type="text"
@@ -109,14 +96,14 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A488E]"
-                  required
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A488E] focus:border-transparent text-sm sm:text-base"
+                  placeholder="Your name"
                 />
               </div>
-              
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                  Email <span className="text-red-500">*</span>
+
+              <div>
+                <label htmlFor="email" className="block text-sm sm:text-base font-medium text-gray-700 mb-1">
+                  Email *
                 </label>
                 <input
                   type="email"
@@ -124,14 +111,14 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A488E]"
-                  required
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A488E] focus:border-transparent text-sm sm:text-base"
+                  placeholder="Your email"
                 />
               </div>
-              
-              <div className="mb-4">
-                <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
-                  Phone Number
+
+              <div>
+                <label htmlFor="phone" className="block text-sm sm:text-base font-medium text-gray-700 mb-1">
+                  Phone (Optional)
                 </label>
                 <input
                   type="tel"
@@ -139,93 +126,78 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A488E]"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A488E] focus:border-transparent text-sm sm:text-base"
+                  placeholder="Your phone number"
                 />
               </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                  Message <span className="text-red-500">*</span>
+
+              <div>
+                <label htmlFor="message" className="block text-sm sm:text-base font-medium text-gray-700 mb-1">
+                  Message *
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A488E]"
-                  required
-                ></textarea>
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1A488E] focus:border-transparent text-sm sm:text-base"
+                  placeholder="Your message"
+                />
               </div>
-              
+
+              {formStatus.message && (
+                <div className={`p-3 rounded-md text-sm sm:text-base ${
+                  formStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                }`}>
+                  {formStatus.message}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="bg-[#1A488E] hover:bg-[#97B2DE] hover:text-[#092147] text-white px-6 py-3 rounded-md font-medium transition-colors duration-300 flex items-center"
+                className="w-full bg-[#1A488E] text-white px-6 py-2 sm:py-3 rounded-md font-medium hover:bg-[#97B2DE] hover:text-[#092147] transition-colors duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
               >
-                <Send size={16} className="mr-2" />
                 Send Message
+                <Send size={16} className="inline-block" />
               </button>
             </form>
           </div>
-          
-          <div className="flex flex-col">
-            <div className="bg-[#092147] rounded-lg shadow-lg p-8 text-white mb-8">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-[#1A488E] p-3 rounded-full mr-4">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-[#97B2DE]">Phone</h4>
-                    <p>+254 742 234-790</p>
-                    <p>+254 769 312-733</p>
-                  </div>
+
+          {/* Contact Information */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-6">
+            <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-lg border border-white/20 shadow-lg">
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-[#97B2DE]/30 to-[#1A488E]/30 p-3 rounded-full">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A488E]" />
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-[#1A488E] p-3 rounded-full mr-4">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-[#97B2DE]">Email</h4>
-                    <p>info@securesystems.com</p>
-                    <p>support@securesystems.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-[#1A488E] p-3 rounded-full mr-4">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-[#97B2DE]">Location</h4>
-                    <p>40200 Kisii</p>
-                    <p>Nyaribari chache, Kisii Town, Texas building</p>
-                  </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#092147] mb-1">Phone</h3>
+                  <p className="text-sm sm:text-base text-gray-600">+254 700 000 000</p>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8 flex-1">
-              <h3 className="text-2xl font-bold text-[#092147] mb-6">Operating Hours</h3>
-              
-              <div className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="font-medium">Monday - Friday:</span>
-                  <span>8:00 AM - 5:00 PM</span>
+
+            <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-lg border border-white/20 shadow-lg">
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-[#97B2DE]/30 to-[#1A488E]/30 p-3 rounded-full">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A488E]" />
                 </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Saturday:</span>
-                  <span>10:00 AM - 3:00 PM</span>
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#092147] mb-1">Email</h3>
+                  <p className="text-sm sm:text-base text-gray-600">info@securesystems.com</p>
                 </div>
-                <div className="flex justify-between">
-                  <span className="font-medium">Sunday:</span>
-                  <span>Closed</span>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 rounded-lg border border-white/20 shadow-lg sm:col-span-2 lg:col-span-1">
+              <div className="flex items-start space-x-4">
+                <div className="bg-gradient-to-br from-[#97B2DE]/30 to-[#1A488E]/30 p-3 rounded-full">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-[#1A488E]" />
                 </div>
-                <div className="pt-4 border-t border-gray-200 mt-4">
-                  <p className="text-[#1A488E] font-medium">24/7 Client Support Available</p>
+                <div>
+                  <h3 className="text-base sm:text-lg font-semibold text-[#092147] mb-1">Location</h3>
+                  <p className="text-sm sm:text-base text-gray-600">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>

@@ -80,13 +80,6 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      
-      {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
-        <a href="#services" className="text-white opacity-80 hover:opacity-100 transition-opacity">
-          <ChevronDown size={32} />
-        </a>
-      </div>
     </section>
   );
 };
