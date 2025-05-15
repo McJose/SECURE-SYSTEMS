@@ -1,5 +1,6 @@
 import { Linkedin, Twitter, Mail, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TeamMember {
   name: string;
@@ -16,7 +17,13 @@ interface TeamMember {
 
 const TeamCard = ({ member }: { member: TeamMember }) => {
   return (
-    <div className="relative group w-full">
+    <motion.div 
+      className="relative group w-full"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="absolute -inset-1 bg-gradient-to-r from-[#97B2DE]/30 to-[#1A488E]/30 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
       
       <div className="relative bg-white/10 backdrop-blur-lg rounded-lg p-4 sm:p-6 shadow-xl border border-white/20 transition-all duration-300 hover:shadow-2xl hover:translate-y-[-5px] border-t-4 border-t-[#1A488E] overflow-hidden">
@@ -27,7 +34,7 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
             <img 
               src={member.image} 
               alt={member.name}
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-contain rounded-xl transition-transform duration-500 group-hover:scale-105 bg-[#ECF3F9]/30"
+              className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-contain rounded-xl transition-transform duration-500 group-hover:scale-105 bg-[#092147]/80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#092147] to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 rounded-xl"></div>
           </div>
@@ -83,24 +90,13 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const Team = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextMember = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevMember = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? teamMembers.length - 1 : prevIndex - 1
-    );
-  };
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
   const teamMembers: TeamMember[] = [
     {
@@ -125,7 +121,7 @@ const Team = () => {
     {
       name: "Joseph Muema",
       role: "Chief Operations Officer",
-      image: "../jose.png ",
+      image: "../jose.png",
       bio: "Joseph is our operations leader, ensuring smooth day-to-day processes and client satisfaction.",
       portfolio: "https://josephmakau.netlify.app/",
       social: {
@@ -150,7 +146,7 @@ const Team = () => {
       role: "Chief Sales Officer",
       image: "#",
       bio: "Kunga specializes in sales and revenue generation.",
-      portfolio:"#",
+      portfolio: "#",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -171,7 +167,7 @@ const Team = () => {
     {
       name: "Naomi",
       role: "Chief Legal Officer",
-      image: "#",
+      image: "../Naomi.png",
       bio: "Naomi specializes in legal and compliance matters.",
       social: {
         linkedin: "#",
@@ -181,6 +177,43 @@ const Team = () => {
     }
   ];
 
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % teamMembers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? teamMembers.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Auto-scroll effect
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+
+    if (isAutoScrolling) {
+      intervalId = setInterval(() => {
+        nextSlide();
+      }, 5000); // Change slides every 5 seconds
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [isAutoScrolling]);
+
+  // Get visible cards (3 at a time)
+  const getVisibleCards = () => {
+    const cards = [];
+    for (let i = 0; i < 3; i++) {
+      const index = (currentIndex + i) % teamMembers.length;
+      cards.push(teamMembers[index]);
+    }
+    return cards;
+  };
+
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5FEFD]">
       <div className="max-w-7xl mx-auto">
@@ -188,49 +221,72 @@ const Team = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#092147] mb-3 sm:mb-4">Our Team</h2>
           <div className="w-20 sm:w-24 h-1 bg-[#1A488E] mx-auto mb-4 sm:mb-6"></div>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-            Meet our exceptional team of cybersecurity experts dedicated to protecting your digital assets.
+            Meet our exceptional team of tech experts dedicated to delivering top-notch services.
           </p>
         </div>
 
-        {/* Desktop view - grid */}
-        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 max-w-screen-xl mx-auto">
-          {teamMembers.map((member, index) => (
-            <TeamCard key={index} member={member} />
-          ))}
+        {/* Carousel Controls */}
+        <div className="flex justify-end space-x-2 mb-6">
+          <button
+            onClick={() => setIsAutoScrolling(!isAutoScrolling)}
+            className="px-4 py-2 text-sm font-medium text-[#092147] hover:text-[#1A488E]"
+          >
+            {isAutoScrolling ? 'Pause' : 'Play'} Slideshow
+          </button>
         </div>
 
-        {/* Mobile/Tablet view - carousel */}
-        <div className="lg:hidden">
-          <div className="max-w-[280px] sm:max-w-md md:max-w-lg mx-auto">
-            <TeamCard member={teamMembers[currentIndex]} />
+        {/* Desktop Carousel */}
+        <div className="relative">
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-3 gap-6 lg:gap-8">
+              <AnimatePresence mode="wait">
+                {getVisibleCards().map((member, index) => (
+                  <TeamCard key={`${member.name}-${index}`} member={member} />
+                ))}
+              </AnimatePresence>
+            </div>
           </div>
-          
-          <div className="flex justify-center mt-6 sm:mt-8 space-x-3 sm:space-x-4">
-            <button 
-              onClick={prevMember}
-              className="bg-gray-200 rounded-full p-1.5 sm:p-2 text-[#092147] hover:bg-[#1A488E] hover:text-white transition-colors duration-300"
-            >
-              <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
-            </button>
-            <button 
-              onClick={nextMember}
-              className="bg-gray-200 rounded-full p-1.5 sm:p-2 text-[#092147] hover:bg-[#1A488E] hover:text-white transition-colors duration-300"
-            >
-              <ChevronRight size={20} className="sm:w-6 sm:h-6" />
-            </button>
+
+          {/* Mobile view - single card */}
+          <div className="lg:hidden">
+          <div className="max-w-[280px] sm:max-w-[280px] md:max-w-[280px] mx-auto">
+            <AnimatePresence mode="wait">
+              <TeamCard key={teamMembers[currentIndex].name} member={teamMembers[currentIndex]} />
+            </AnimatePresence>
           </div>
-          
-          <div className="flex justify-center mt-4">
-            {teamMembers.map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 sm:w-3 sm:h-3 mx-1 rounded-full ${
-                  index === currentIndex ? 'bg-[#1A488E]' : 'bg-gray-300'
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
           </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 bg-white/80 hover:bg-white text-[#092147] p-2 rounded-full shadow-lg transition-all duration-200"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 bg-white/80 hover:bg-white text-[#092147] p-2 rounded-full shadow-lg transition-all duration-200"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center space-x-2 mt-6">
+          {teamMembers.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                Math.floor(currentIndex) === index 
+                  ? 'bg-[#1A488E] w-4' 
+                  : 'bg-[#97B2DE]'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

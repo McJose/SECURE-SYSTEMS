@@ -72,7 +72,7 @@ const Services = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#092147] mb-3 sm:mb-4">Our Services</h2>
           <div className="w-20 sm:w-24 h-1 bg-[#1A488E] mx-auto mb-4 sm:mb-6"></div>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-            We provide comprehensive security solutions to protect your digital assets and ensure your peace of mind.
+            We provide comprehensive tech solutions that stretch over a range of tech services.
           </p>
         </div>
         

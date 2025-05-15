@@ -75,7 +75,7 @@ const Contact = () => {
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#F5FEFD]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#092147] mb-3 sm:mb-4">Get in Touch</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#092147] mb-3 sm:mb-4">Contact Us</h2>
           <div className="w-20 sm:w-24 h-1 bg-[#1A488E] mx-auto mb-4 sm:mb-6"></div>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
             Have questions or need assistance? We're here to help. Reach out to us through any of the following channels.
@@ -173,7 +173,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-[#092147] mb-1">Phone</h3>
-                  <p className="text-sm sm:text-base text-gray-600">+254 700 000 000</p>
+                  <p className="text-sm sm:text-base text-gray-600">+254 742 234 790</p>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-base sm:text-lg font-semibold text-[#092147] mb-1">Location</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Nairobi, Kenya</p>
+                  <p className="text-sm sm:text-base text-gray-600">Kisii, Kenya</p>
                 </div>
               </div>
             </div>

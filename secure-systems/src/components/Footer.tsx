@@ -63,29 +63,17 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Newsletter */}
+          {/* Operation hours */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-[#97B2DE]">Newsletter</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-[#97B2DE]">Operation Hours</h3>
             <p className="text-sm sm:text-base text-gray-300 mb-4">
-              Subscribe to our newsletter for the latest security updates and news.
+              Monday - Friday: 9:00 AM - 6:00 PM
             </p>
-            <form className="mb-4">
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="px-3 sm:px-4 py-2 rounded-l-md w-full focus:outline-none text-gray-800 text-sm sm:text-base"
-                />
-                <button
-                  type="submit"
-                  className="bg-[#1A488E] hover:bg-[#97B2DE] hover:text-[#092147] px-3 sm:px-4 py-2 rounded-r-md transition-colors duration-300 text-sm sm:text-base whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
+            <p className="text-sm sm:text-base text-gray-300 mb-4">
+              Saturday - Sunday: 10:00 AM - 4:00 PM
+            </p>
             <p className="text-xs sm:text-sm text-gray-400">
-              By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+              Reach out today for a consultation.
             </p>
           </div>
         </div>

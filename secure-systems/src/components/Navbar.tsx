@@ -80,7 +80,7 @@ const Navbar = () => {
                 href="#contact"
                 className="bg-[#1A488E] hover:bg-[#97B2DE] hover:text-[#092147] text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
-                Get in Touch
+                Contact Us
               </a>
             </div>
           </div>
