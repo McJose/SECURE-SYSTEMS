@@ -34,7 +34,7 @@ const About = () => {
           <div className="order-1 md:order-2 relative">
             <div className="relative z-10">
               <img 
-                src="/src/assets/team photo.jpeg" 
+                src="/dist/assets/team photo.jpeg" 
                 alt="Secure Systems team" 
                 className="rounded-lg shadow-xl object-cover w-full h-[250px] sm:h-[300px] md:h-[400px]"
               />

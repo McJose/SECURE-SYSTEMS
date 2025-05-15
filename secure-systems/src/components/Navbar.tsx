@@ -57,7 +57,7 @@ const Navbar = () => {
                     className="h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain"
                     onError={(e) =>{
                       const img = e.target as HTMLImageElement;
-                      img.src = '/src/assets/logo.png';
+                      img.src = '/dist/assets/logo.png';
                     }} 
                   />  
                 </div>
